@@ -1,0 +1,484 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 
+      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.heading {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    width: 100%;
+}
+.heading h1 {
+    color:rgb(136, 72, 136);
+    font-size: 60px;
+}
+.heading h3 {
+    color:white;
+    font-size: 23px;
+}
+#particles-js {
+    background: black;
+    height: 100vh;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:black;
+  font-family: "Source Sans Pro";
+  color: #6cacc5;
+  color:white;
+}
+
+.header {
+  text-align:center;
+  font-size: 40px;
+  background-color: black;
+}
+
+.ul {
+  padding: 50px 0;
+}
+
+.uli .lii {
+  position:relative;
+  list-style-type: none;
+  width: 6px;
+  background-color: white;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.uli .lii::after {
+  background: white;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  }
+
+
+.uli .lii div{
+  position: relative;
+  width: 400px;
+  padding: 15px;
+  border-radius: 5px;
+  bottom: 0;
+  background:rgb(136, 72, 136) ;
+}
+/* rgba(42,50,113, .28) */
+.uli .lii:nth-child(odd) div {
+  left: 45px;
+}
+
+.uli .lii:nth-child(even) div {
+  left: -445px;
+}
+
+time {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.uli .lii div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.uli .lii:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.uli .lii:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.uli .lii.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .uli .lii div {
+    width: 250px;
+  }
+  .uli .lii:nth-child(even) div {
+    left: -289px;
+    
+  }
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+.contact{
+    background-color: black;
+    color:white;
+    font-family: 'Muli',sans-serif;
+    display:flex;
+    /* flex-direction:column; */
+    align-items:center;
+    justify-content: space-between;
+    /* height:100vh;
+    overflow:hidden; */
+    margin:0;
+    margin-top: 5%;
+    /* border: 1px solid rgb(136, 72, 136); */
+}
+.container{
+    background-color:rgba(0,0,0,0.4);
+    padding:20px 40px;
+    border-radius:5px;
+    margin-left: 15%;
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container a{
+    text-decoration: none;
+    color:lightblue;
+}
+.image{
+    margin-right: 5%;
+}
+.btn{
+   cursor:pointer;
+   display:inline-block;
+   width:100%;
+   background:lightblue;
+   padding:15px;
+   font-family:inherit;
+   font-size:16px;
+   border:0;
+   border-radius:5px; 
+}
+.btn:focus{
+    outline:0;
+}
+.btn:active{
+    transform:scale(0.98);
+}
+.text{
+    margin-top:30px;
+}
+.form-control{
+    position: relative;
+    margin:20px 0 40px;
+    width:300px;
+}
+.form-control input{
+    background-color: transparent;
+    border:0;
+    border-bottom:2px #fff solid;
+    display:block;
+    width:100%;
+    padding:15px 0;
+    font-size:18px;
+    color:white;
+}
+.form-control input:focus,
+.form-control input:valid{
+    outline:0;
+    border-bottom-color:lightblue;
+}
+
+.form-control label{
+    position: absolute;
+    top:15px;
+    left:0;
+}
+
+.form-control label span{
+    display:inline-block;
+    font-size:18px;
+    min-width:5px;
+    transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-control input:focus+label span,
+.form-control input:valid+label span{
+    color:lightblue;
+    transform: translateY(-30px);
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    padding-bottom: 100px;
+  }
+  
+  #contact {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 60px 'Oswald', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+  
+  .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+  }
+  
+  /* Left contact page */
+  .form-horizontal {
+    /*float: left;*/
+    max-width: 400px;
+    font-family: 'Lato';
+    font-weight: 400;
+  }
+  
+  .form-control, 
+  textarea {
+    max-width: 400px;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .send-button {
+    margin-top: 15px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+  
+  .alt-send-button {
+    width: 400px;
+    height: 34px;
+    transition: all .2s ease-in-out;
+  }
+  
+  .send-text {
+    display: block;
+    margin-top: 10px;
+    font: 700 12px 'Lato', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .alt-send-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+  }
+  
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    max-width: 400px;
+  }
+  
+  /* Location, Phone, Email Section */
+  .contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+  }
+  
+  .list-item {
+    line-height: 4;
+    color: #aaa;
+  }
+  
+  .contact-text {
+    font: 300 18px 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: #bbb;
+  }
+  
+  .place {
+    margin-left: 62px;
+  }
+  
+  .phone {
+    margin-left: 56px;
+  }
+  
+  .gmail {
+    margin-left: 53px;
+  }
+  
+  .contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+  }
+  
+  .contact-text a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  /* Social Media Icons */
+  .social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .social-media-list li a {
+    color: #fff;
+  }
+  
+  .social-media-list li {
+    position: relative; 
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27,27,27);
+    cursor: pointer; 
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:hover {
+    background-color: #fff; 
+  }
+  
+  .social-media-list li:hover:after {
+    opacity: 1;  
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+  }
+  
+  .social-media-list li:hover a {
+    color: #000;
+  }
+  
+  .copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  hr {
+    border-color: rgba(255,255,255,.6);
+  }
+  
+  /* Begin Media Queries*/
+  @media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .direct-contact-container, .form-horizontal {
+      margin: 0 auto;
+    }  
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 300px;
+    }    
+    .social-media-list li {
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+    }
+    .social-media-list li:after {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+  
+  @media screen and (max-width: 569px) {
+  
+    .direct-contact-container, .form-wrapper {
+      float: none;
+      margin: 0 auto;
+    }  
+    .form-control, textarea {
+      
+      margin: 0 auto;
+    }
+   
+    
+    .name, .email, textarea {
+      width: 280px;
+    } 
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 280px;
+    }  
+    .social-media-list {
+      left: 0;
+    }
+    .social-media-list li {
+      height: 55px;
+      width: 55px;
+      line-height: 55px;
+      font-size: 2rem;
+    }
+    .social-media-list li:after {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 410px) {
+    .send-button {
+      width: 99%;
+    }
+  }

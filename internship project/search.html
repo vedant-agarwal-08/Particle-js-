@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Table Data Searching Using JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div
+    style="
+      display: flex;
+      background-color: black;
+      justify-content: space-between;
+    "
+  >
+    <div style="margin-left: 5%; margin-top: 1%">
+      <h1 style="color: white">
+        <span style="color: rgb(171, 98, 171)">H</span>WAY
+      </h1>
+    </div>
+    <div style="margin-right: 5%; margin-top: 1.5%">
+      <ul
+        class="ul_item"
+        style="
+          list-style-type: none;
+          margin: 0;
+          padding: 0px;
+          overflow: hidden;
+          background-color: black;
+        "
+      >
+        <li class="li_item" style="float: left">
+          <a
+            class="active"
+            href="./index.html"
+            style="
+              display: block;
+              color: white;
+              font-size: 20px;
+              text-align: center;
+              padding: 10px 20px;
+              text-decoration: none;
+            "
+            >Home</a
+          >
+        </li>
+        <li class="li_item" style="float: left"><a href="#" style="
+            display: block;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+          ">Search</a></li>
+        <li class="li_item" style="float: left"><a href="./index.html#contact" style="
+            display: block;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+          ">Sign Up</a></li>
+        
+      </ul>
+    </div>
+  </div>
+    <div class="container mt-5 pb-5 pt-5 " style="background-color: rgb(217, 235, 250);border-radius: 20px;">
+
+        <div class="row ">
+            <div class="offset-md-3 col-md-6  ">
+                <input type="search" class="form-control" id="search" placeholder="Live Searching.....">
+            </div>
+        </div>
+
+        <h3 id="error" class="text-center mt-3"></h3>
+
+        <div class="row ">
+            <div class="offset-md-1 col-md-10 ">
+
+                <table class="table table-bordered border-primary table-hover mt-5 text-capitalize" id="mytable">
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var array=[
+    {
+        id:"1",
+        name:"Vedant Agrawal",
+        country:"India",
+        city:"Jabalpur",
+        profession:"Full Stack Developer"
+    },
+    {
+        id:"2",
+        name:"Shubham Singh",
+        country:"Canada",
+        city:"Toronto",
+        profession:"Salesman"
+    },
+    {
+        id:"3",
+        name:"Aman Khan",
+        country:"UAE",
+        city:"Dubai",
+        profession:"Software Engineer"
+    },
+    {
+        id:"4",
+        name:"James Ptereson",
+        country:"England",
+        city:"Manchester",
+        profession:"HR Manager"
+    },
+    {
+        id:"5",
+        name:"Luka Modric",
+        country:"Croatia",
+        city:"Lucknow",
+        profession:"Customer services"
+    },
+    {
+        id:"6",
+        name:"Sachin Tendulkar",
+        country:"India",
+        city:"Mumbai",
+        profession:"Finance Manager"
+    },
+    {
+        id:"7",
+        name:"Ricky Ponting",
+        country:"Australia",
+        city:"Australia",
+        profession:"Branch Manager"
+    },
+    {
+id: "8",
+name: "Sophie Adams",
+country: "France",
+city: "Paris",
+profession: "Event Planner"
+},
+
+{
+id: "9",
+name: "Michael Chen",
+country: "China",
+city: "Beijing",
+profession: "Project Manager"
+},
+{
+id: "10",
+name: "Jennifer Murphy",
+country: "Ireland",
+city: "Dublin",
+profession: "Accountant"
+},
+
+{
+id: "11",
+name: "Daniel Oliveira",
+country: "Brazil",
+city: "Sao Paulo",
+profession: "Operations Manager"
+},
+
+{
+id: "12",
+name: "Emily Wilson",
+country: "England",
+city: "London",
+profession: "Marketing Coordinator"
+},
+{
+id: "13",
+name: "Alexander Müller",
+country: "Germany",
+city: "Berlin",
+profession: "Software Developer"
+},
+
+{
+id: "14",
+name: "Maria Santos",
+country: "Portugal",
+city: "Lisbon",
+profession: "Human Resources Assistant"
+},
+
+{
+id: "15",
+name: "Thomas Andersen",
+country: "Denmark",
+city: "Copenhagen",
+profession: "Sales Manager"
+},
+
+{
+id: "16",
+name: "Isabella Rossi",
+country: "Italy",
+city: "Rome",
+profession: "Operations Coordinator"
+},
+
+{
+id: "17",
+name: "Liam Johnson",
+country: "Canada",
+city: "Vancouver",
+profession: "Financial Analyst"
+},
+
+{
+id: "18",
+name: "Olivia Müller",
+country: "Germany",
+city: "Hamburg",
+profession: "Marketing Specialist"
+},
+
+{
+id: "19",
+name: "Noah Tremblay",
+country: "Canada",
+city: "Montreal",
+profession: "HR Coordinator"
+},
+
+{
+id: "20",
+name: "Ava Taylor",
+country: "United States",
+city: "Los Angeles",
+profession: "Graphic Designer"
+},
+
+{
+id: "21",
+name: "William Dubois",
+country: "France",
+city: "Nice",
+profession: "Sales Representative"
+},
+
+{
+id: "22",
+name: "Mia Yoshida",
+country: "Japan",
+city: "Tokyo",
+profession: "Project Coordinator"
+},
+
+{
+id: "23",
+name: "James Brown",
+country: "United States",
+city: "Chicago",
+profession: "IT Manager"
+},
+
+{
+id: "24",
+name: "Charlotte Bernard",
+country: "France",
+city: "Lyon",
+profession: "Account Manager"
+},
+{
+id: "25",
+name: "Benjamin Silva",
+country: "Brazil",
+city: "Rio de Janeiro",
+profession: "Marketing Director"
+},
+
+{
+id: "26",
+name: "Lily Chen",
+country: "China",
+city: "Shanghai",
+profession: "Finance Manager"
+},
+
+{
+id: "27",
+name: "Lucas Smith",
+country: "Australia",
+city: "Melbourne",
+profession: "Operations Analyst"
+},
+
+{
+id: "28",
+name: "Ella Kim",
+country: "South Korea",
+city: "Busan",
+profession: "Sales Coordinator"
+},
+{
+id: "29",
+name: "Henry Tremblay",
+country: "Canada",
+city: "Ottawa",
+profession: "HR Assistant"
+},
+
+{
+id: "30",
+name: "Aria Patel",
+country: "India",
+city: "Mumbai",
+profession: "Software Engineer"
+},
+
+{
+id: "31",
+name: "Jack Thompson",
+country: "United States",
+city: "San Francisco",
+profession: "Marketing Manager"
+},
+
+{
+id: "32",
+name: "Amelia López",
+country: "Spain",
+city: "Barcelona",
+profession: "Sales Representative"
+},
+
+{
+id: "33",
+name: "Lucas Kim",
+country: "South Korea",
+city: "Incheon",
+profession: "IT Consultant"
+},
+
+{
+id: "34",
+name: "Sophia Rousseau",
+country: "France",
+city: "Marseille",
+profession: "Event Planner"
+},
+
+{
+id: "35",
+name: "Logan Wang",
+country: "China",
+city: "Guangzhou",
+profession: "Project Manager"
+},
+
+{
+id: "36",
+name: "Mia O'Connor",
+country: "Ireland",
+city: "Cork",
+profession: "Accountant"
+},
+{
+id: "37",
+name: "Lucas Fernandes",
+country: "Brazil",
+city: "Brasília",
+profession: "Operations Manager"
+},
+
+{
+id: "38",
+name: "Emily Müller",
+country: "Germany",
+city: "Munich",
+profession: "Software Developer"
+},
+
+{
+id: "39",
+name: "Liam Santos",
+country: "Portugal",
+city: "Porto",
+profession: "Human Resources Assistant"
+},
+
+{
+id: "40",
+name: "Rashi Tripathi",
+country: "South Korea",
+city: "Seoul",
+profession:"Inventory Manager"
+}
+]
+        function showtable(curarray) {
+            document.getElementById("mytable").innerHTML = `
+            <tr class="bg-primary text-white fw-bold">
+                <td>ID</td>
+                <td>Name</td>
+                <td>Country</td>
+                <td>City</td>
+                <td>Profession</td>
+            </tr> `;
+
+            if (curarray == "") {
+                document.getElementById("error").innerHTML = `<span class='text-danger '>Not Found!</span>`;
+            }
+            else {
+
+                document.getElementById("error").innerHTML = "";
+
+                for (var i = 0; i < curarray.length; i++) {
+                    document.getElementById("mytable").innerHTML += `
+              <tr > 
+                <td>${curarray[i].id}</td> 
+                <td>${curarray[i].name}</td> 
+                <td>${curarray[i].country}</td> 
+                <td>${curarray[i].city}</td>
+                <td>${curarray[i].profession}</td> 
+                </tr>`;
+                }
+            }
+        }
+
+        function filterTable() {
+            var search = document.getElementById("search").value.toLowerCase();
+
+            var filteredArray = array.filter(function (val) {
+                for (var key in val) {
+                    if (val[key].toLowerCase().includes(search)) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+
+            showtable(filteredArray);
+        }
+
+        showtable(array);
+
+        document.getElementById("search").addEventListener("keyup", filterTable);
+
+    </script>
+
+</body>
+
+</html>
